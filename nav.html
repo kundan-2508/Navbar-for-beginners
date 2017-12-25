@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<style>
+*
+{
+	margin:0;
+	padding:0;
+}
+ul.a , ul.b
+{
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	background-color: #333;
+}
+ul.b
+{
+	background:#ddd;
+}
+ul.a li , ul.b li
+{
+	float:left;
+}
+ul.a li a , ul.b li a
+{
+	display: inline-block;
+	text-decoration:none;
+	padding:14px 16px;
+	color:white;
+	text-align:center;
+}
+ul.b li a
+{
+	color:black;
+}
+.active
+{
+	border-bottom:3px solid pink;
+}
+ul.a li:hover:not(.active) a 
+{
+	color:pink;
+	border-bottom:3px solid pink;
+}
+ul.b li:hover:not(.active) a
+{
+	color:green;
+	border-bottom:3px solid pink;
+}
+ul.a li.active a
+{
+	color:pink;
+}
+ul.b li.active a
+{
+	color:green;
+}
+</style>
+
+
+<ul class = "a">
+	<li class = "active"><a href = "#">Home</a></li>
+	<li><a href = "#">About</a></li>
+	<li><a href = "#">Contact</a></li>
+	<li><a href = "#">Products</a></li>
+	<li><a href = "#">FAQ's</a></li>
+</ul>
+<br>
+<ul class = "b">
+	<li class = "active"><a href = "#">Home</a></li>
+	<li><a href = "#">About</a></li>
+	<li><a href = "#">Contact</a></li>
+	<li><a href = "#">Products</a></li>
+	<li><a href = "#">FAQ's</a></li>
+</ul>
+
+<script>
+
+$(document).ready(function(){
+	$("ul.a li").click(function(){
+		$("ul.a li").removeClass('active');
+		$(this).addClass('active');
+	});
+	$("ul.b li").click(function(){
+		$("ul.b li").removeClass('active');
+		$(this).addClass('active');
+	});
+});
+
+</script>
+
+
+</body>
+
+</html>
